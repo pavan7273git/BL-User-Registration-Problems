@@ -8,6 +8,10 @@ def is_valid_email(email):
     pattern = r'^[a-zA-Z0-9]+(\.[a-zA-Z0-9]+)?@[a-zA-Z0-9]+\.[a-zA-Z]{2,}(\.[a-zA-Z]{2,})?$'
     return bool(re.match(pattern, email))
 
+def is_valid_mobile(mobile):
+    pattern = r'^[0-9]{2} [0-9]{10}$'
+    return bool(re.match(pattern, mobile))
+
 while True:
     first_name = input("Enter your First Name: ")
     if is_valid_name(first_name):
@@ -30,5 +34,12 @@ while True:
         print(f"{email} is a Valid Email Address.")
         break
     else:
-        print("Invalid Email Address! Example: abc.xyz@bl.co.in")
+        print("Invalid Email Address. Reenter the Email Address")
 
+while True:
+    mobile = input("Enter Mobile Number ( CountryCode Space 10-Digit Number): ")
+    if is_valid_mobile(mobile):
+        print(f"{mobile} is a Valid Mobile Number.")
+        break
+    else:
+        print("Invalid Mobile Number. Reenter the number it should be 10 digit number")
