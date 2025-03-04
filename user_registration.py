@@ -24,7 +24,7 @@ def is_valid_mobile(mobile):
     return bool(re.match(pattern, mobile))
 
 def is_valid_password(password):
-    pattern = r'^(?=.*[A-Z])(?=.*\d).{8,}$' # it checks the password contain  atleast 8 characters and one upper case letter and one numeric
+    pattern = r'^(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+={}\[\]:;"\'<>,.?/~`]).{8,}$' # it checks the password contain  atleast 8 characters and one upper case letter and one numeric
     return bool(re.match(pattern, password))
 
 while True:
@@ -65,4 +65,4 @@ while True:
         print("Valid Password.")
         break
     else:
-        print("Invalid Password! Password must be at least 8 characters long.")
+        print("Invalid Password! Password must be at least 8 characters long with one Upper case letter and one numeric and one special character.")
