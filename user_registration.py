@@ -5,7 +5,11 @@ Should
 have at least 1
 Upper Case - NOTE All rules must be passed'''
 
-
+'''Rule3
+Should
+have at least 1
+numeric number in
+the password - NOTE All rules must be passed'''
 
 def is_valid_name(name):
     pattern = r'^[A-Z][a-zA-Z]{2,}$'  #it checks the first letter is capital and minimum of 3 characters
@@ -20,7 +24,7 @@ def is_valid_mobile(mobile):
     return bool(re.match(pattern, mobile))
 
 def is_valid_password(password):
-    pattern = r'^(?=.*[A-Z]).{8,}$'  # it checks the password contain  atleast 8 characters and one upper case letter
+    pattern = r'^(?=.*[A-Z])(?=.*\d).{8,}$' # it checks the password contain  atleast 8 characters and one upper case letter and one numeric
     return bool(re.match(pattern, password))
 
 while True:
