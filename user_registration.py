@@ -1,12 +1,9 @@
 import re
 
-'''As a User need to
-follow pre
--defined
-Password rules.
-Rule1
-minimum 8
-Characters - NOTE All rules must be passed'''
+'''Rule2
+Should
+have at least 1
+Upper Case - NOTE All rules must be passed'''
 
 
 
@@ -23,7 +20,7 @@ def is_valid_mobile(mobile):
     return bool(re.match(pattern, mobile))
 
 def is_valid_password(password):
-    pattern = r'^.{8,}$'  # it checks the password contain  atleast 8 characters
+    pattern = r'^(?=.*[A-Z]).{8,}$'  # it checks the password contain  atleast 8 characters and one upper case letter
     return bool(re.match(pattern, password))
 
 while True:
